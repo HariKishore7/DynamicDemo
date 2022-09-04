@@ -5,7 +5,7 @@ import Radio from './seperate components/Radio'
 import TextArea from './seperate components/TextArea';
 import Number from './seperate components/Number';
 
-const FormData = ({field: {id,label, type, options, validations}})=> {
+const FormData = ({field: {id,label, type, options, validations, value,error}})=> {
 
   switch(type){
     case 'text':
@@ -14,6 +14,7 @@ const FormData = ({field: {id,label, type, options, validations}})=> {
       label={label}
       type={type}
       validations={validations}
+      error={error}
       />)
     case 'radio':
       return(<Radio
@@ -21,7 +22,9 @@ const FormData = ({field: {id,label, type, options, validations}})=> {
         label={label}
         type={type}
         options={options}
+        // value={value}
         validations={validations}
+        error={error}
       />)
     case "select":
       return(<Select
@@ -30,6 +33,7 @@ const FormData = ({field: {id,label, type, options, validations}})=> {
         type={type}
         options={options}
         validations={validations}
+        error={error}
       />)
     case "textArea":
       return(<TextArea
@@ -37,6 +41,7 @@ const FormData = ({field: {id,label, type, options, validations}})=> {
         label={label}
         type={type}
         validations={validations}
+        error={error}
       />)
     case "number":
       return(<Number
@@ -44,6 +49,7 @@ const FormData = ({field: {id,label, type, options, validations}})=> {
         label={label}
         type={type}
         validations={validations}
+        error={error}
       />)
     default:
       return null;

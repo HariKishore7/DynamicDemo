@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../../FormContext';
-const Radio = ({id,label, type, options, validations,value}) => {
+const Radio = ({id,label, type, options, validations,error}) => {
 
     const {handleChange} = useContext(FormContext)
 
@@ -11,10 +11,11 @@ return (
             return(
                 <>
                     <label>{opt.label}: </label>
-                    <input onChange={(event)=>handleChange(id,event)} type={type} name={id} id={id}></input>
+                    <input onChange={(event)=>handleChange(id,event,validations)} type={type} name={id} id={id} value={opt.value}/>
                 </>
             )
         })}
+                     <span>{error&&error}</span>
     </div>
     )
 }
