@@ -54,16 +54,16 @@
       },
       {
         "id": "maritalStatus",
-        "label": "Marita lStatus",
+        "label": "Marital Status",
         "type": "select",
         "options": [
           {
-            "label": "Male",
-            "value": "male"
+            "label": "Married",
+            "value": "married"
           },
           {
-            "label": "Female",
-            "value": "female"
+            "label": "Un-Married",
+            "value": "un-married"
           }
         ],
         "validations": {

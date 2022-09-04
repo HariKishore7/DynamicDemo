@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import FormData from './components/FormData';
 import formjsondata from './formData.json';
 import { FormContext } from './FormContext';
+// import 
 
 // console.log(formjsondata);
 export default function App(){
@@ -24,7 +25,7 @@ export default function App(){
     // alert("Name: "+firstName+lastName);
     elements.fields.forEach(field => {
       
-       result = result.concat(field.id +" : "+field.value+"\n")
+       result = result.concat(field.label +" : "+field.value+"\n")
         // field['value'] = event.target.value;
       // setElements(newElements)
     // console.log(event.target);
@@ -82,17 +83,25 @@ const isValid = ()=>{
 //   console.log(elements)
 // }
 
-
   return (
     <FormContext.Provider value={{handleChange}}>
-      <div >
+      <div className='container my-5'>
+      <div className='row justify-content-center'>
+        <div className='col-6'>
         <h3>{formHeading}</h3>
-        <form>
+        <form action='' method='POST'>
+            <fieldset className='ml-auto'>
           {fields ? fields.map((field,i)=><FormData key={i} field={field}/>) : null}
-          <button type='submit' onClick={(e)=>handleSubmit(e)} >Submit</button>
+          </fieldset>
         </form>
-        
-      </div>
+        <div className='row justify-content-center'>
+        <div className='col-3'>
+          <button className='btn btn-success' type='submit' onClick={(e)=>handleSubmit(e)} >Submit</button>
+          </div>
+          </div>
+        </div>
+        </div>
+        </div>
       </FormContext.Provider>
       )
 }

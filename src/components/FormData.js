@@ -44,7 +44,7 @@ const FormData = ({field: {id,label, type, options, validations, value,error}})=
         error={error}
       />)
     case "number":
-      return(<Number
+      return(<Input
         id={id}
         label={label}
         type={type}
